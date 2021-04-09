@@ -8,6 +8,9 @@ using Microsoft.AspNetCore.Mvc;
 using Customers_Portal.Models;
 using System.Net.Http;
 using System.Net;
+using Newtonsoft.Json.Linq;
+using System.Net.Http.Headers;
+using Newtonsoft.Json;
 
 namespace Customers_Portal.Controllers
 {
@@ -36,7 +39,9 @@ namespace Customers_Portal.Controllers
             var httpClient = new HttpClient();
 
             var response = await httpClient.GetAsync(requestUri:$"https://sirinerocketelevatorsrestapi.azurewebsites.net/api/Customers/{model.Email}");
-            
+
+            dynamic res = await response.Content.ReadAsAsync<JObject>();
+            string prompt = res.dialog.prompt.ToString();
 
             if (ModelState.IsValid && response.StatusCode ==HttpStatusCode.OK && response.Content.Headers.ContentLength>2)
             {
@@ -87,13 +92,22 @@ namespace Customers_Portal.Controllers
         [AllowAnonymous]
         public async Task<IActionResult> Login(LoginViewModel user)
         {
+            var httpClient = new HttpClient();
+            httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+               var responseGet = await httpClient.GetAsync(requestUri: $"https://sirinerocketelevatorsrestapi.azurewebsites.net/api/Customers/email/{user.Email}");
+
+           // var responseGet = await httpClient.GetAsync(requestUri: $"https://localhost:5001/api/Customers/email/{user.Email}");
+
+            List<UesrModel> res = await responseGet.Content.ReadAsAsync < List<UesrModel>> ();
+
             if (ModelState.IsValid)
             {
+
                 var result = await _signInManager.PasswordSignInAsync(user.Email, user.Password, user.RememberMe, false);
 
                 if (result.Succeeded)
                 {
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("Index", "Home", new { id= res[0].id });
                 }
 
                 ModelState.AddModelError(string.Empty, "Invalid Login Attempt");

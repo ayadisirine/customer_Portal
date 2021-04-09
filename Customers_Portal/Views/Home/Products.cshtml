@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewData["Title"] = "Products";
+}
+<h1 class="text-center"> Your products</h1>
+<br \>
+<h5 class="text-center mx-auto"> Buildings</h5>
+<p class="text-center"> click on the item of your choice to autofill an intervention request form</p>
+
+
+
+<h1 class="text-center"> Buildings </h1>
+
+
+
+@Html.Raw(ViewBag.BuildingTable)
+
+<h1 class="text-center"> Batteries </h1>
+
+
+@Html.Raw(ViewBag.BatteriesTable)
+

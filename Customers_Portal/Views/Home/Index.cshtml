@@ -1,8 +1,13 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">Welcome @ViewData["id"]</h1>
+    <p>information about  <a href="/Home/Products">Interventions</a>.</p>
+    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="interventions" asp-route-id=@ViewData["id"]>Products</a>
+
+
+
+
+    <p>information about  <a href="/Home/Products">Products</a>.</p><Br />
+    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Products" asp-route-id=@ViewData["id"]>Products</a>
 </div>
