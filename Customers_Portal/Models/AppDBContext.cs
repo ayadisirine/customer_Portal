@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
+
 namespace Customers_Portal.Models
 {
     public class AppDBContext : IdentityDbContext

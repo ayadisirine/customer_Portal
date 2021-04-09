@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -8,9 +6,8 @@ using Microsoft.AspNetCore.Mvc;
 using Customers_Portal.Models;
 using System.Net.Http;
 using System.Net;
-using Newtonsoft.Json.Linq;
 using System.Net.Http.Headers;
-using Newtonsoft.Json;
+using System;
 
 namespace Customers_Portal.Controllers
 {
@@ -35,15 +32,19 @@ namespace Customers_Portal.Controllers
         [HttpPost]
         public async Task<IActionResult> Register(RegisterViewModel model)
         {
-           // ServicePointManager.ServerCertificateValidationCallback = delegate { return true; };
+
+
+
             var httpClient = new HttpClient();
+            httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            var response = await httpClient.GetAsync(requestUri: $"https://sirinerocketelevatorsrestapi.azurewebsites.net/api/Customers/email/{model.Email}");
+            List<Object> res = await response.Content.ReadAsAsync<List<Object>>();
 
-            var response = await httpClient.GetAsync(requestUri:$"https://sirinerocketelevatorsrestapi.azurewebsites.net/api/Customers/{model.Email}");
 
-            dynamic res = await response.Content.ReadAsAsync<JObject>();
-            string prompt = res.dialog.prompt.ToString();
 
-            if (ModelState.IsValid && response.StatusCode ==HttpStatusCode.OK && response.Content.Headers.ContentLength>2)
+
+
+            if (ModelState.IsValid && response.StatusCode ==HttpStatusCode.OK && res.Count>0)
             {
                 var user = new IdentityUser 
                 {
@@ -95,8 +96,6 @@ namespace Customers_Portal.Controllers
             var httpClient = new HttpClient();
             httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
                var responseGet = await httpClient.GetAsync(requestUri: $"https://sirinerocketelevatorsrestapi.azurewebsites.net/api/Customers/email/{user.Email}");
-
-           // var responseGet = await httpClient.GetAsync(requestUri: $"https://localhost:5001/api/Customers/email/{user.Email}");
 
             List<UesrModel> res = await responseGet.Content.ReadAsAsync < List<UesrModel>> ();
 
