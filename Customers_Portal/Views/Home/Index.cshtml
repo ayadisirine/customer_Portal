@@ -1,13 +1,11 @@
 ﻿
 
 <div class="text-center">
-    <h1 class="display-4">Welcome @ViewData["id"]</h1>
-    <p>information about  <a href="/Home/Products">Interventions</a>.</p>
+    <h1 class="display-4">Welcome @ViewData["username"]</h1>
+
+    <br /><br /><br />
     <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Intervention" asp-route-id=@ViewData["id"]>Interventions</a>
-
-
-
-
+    <br /><br /><br />
     <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Products" asp-route-id=@ViewData["id"]>Products</a>
 
 

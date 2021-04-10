@@ -71,7 +71,6 @@ C:\Users\HP\source\repos\Customers_Portal\Customers_Portal\obj\Debug\netcoreapp3
 C:\Users\HP\source\repos\Customers_Portal\Customers_Portal\obj\Debug\netcoreapp3.1\Razor\Views\Account\Login.cshtml.g.cs
 C:\Users\HP\source\repos\Customers_Portal\Customers_Portal\obj\Debug\netcoreapp3.1\Razor\Views\Account\register.cshtml.g.cs
 C:\Users\HP\source\repos\Customers_Portal\Customers_Portal\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
-C:\Users\HP\source\repos\Customers_Portal\Customers_Portal\obj\Debug\netcoreapp3.1\Razor\Views\Home\Intervention..cshtml.g.cs
 C:\Users\HP\source\repos\Customers_Portal\Customers_Portal\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
 C:\Users\HP\source\repos\Customers_Portal\Customers_Portal\obj\Debug\netcoreapp3.1\Razor\Views\Home\Products.cshtml.g.cs
 C:\Users\HP\source\repos\Customers_Portal\Customers_Portal\obj\Debug\netcoreapp3.1\Razor\Views\Products\index.cshtml.g.cs
@@ -89,3 +88,4 @@ C:\Users\HP\source\repos\Customers_Portal\Customers_Portal\obj\Debug\netcoreapp3
 C:\Users\HP\source\repos\Customers_Portal\Customers_Portal\obj\Debug\netcoreapp3.1\Customers_Portal.genruntimeconfig.cache
 C:\Users\HP\source\repos\Customers_Portal\Customers_Portal\bin\Debug\netcoreapp3.1\Humanizer.dll
 C:\Users\HP\source\repos\Customers_Portal\Customers_Portal\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\HP\source\repos\Customers_Portal\Customers_Portal\obj\Debug\netcoreapp3.1\Razor\Views\Home\Intervention.cshtml.g.cs
