@@ -168,7 +168,7 @@ namespace Customers_Portal.Controllers
  
                         for (int H = 0; H < resElevator.Count; H++)
                         {
-                            ViewBag.ElevatorTable += $"<option value='{ resElevator[H].Id}'> resElevator[H].Id </option> ";
+                            ViewBag.ElevatorTable += $"<option value='{ resElevator[H].Id}'> {resElevator[H].Id} </option> ";
 
                         }
                         ViewBag.ElevatorTable += $"</table> ";
