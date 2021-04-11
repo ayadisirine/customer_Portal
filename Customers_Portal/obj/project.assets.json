@@ -8047,11 +8047,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\HP\\source\\repos\\Customers_Portal\\Customers_Portal\\Customers_Portal.csproj",
+      "projectUniqueName": "C:\\Users\\HP\\Desktop\\Amine\\customer_Portal\\Customers_Portal\\Customers_Portal.csproj",
       "projectName": "Customers_Portal",
-      "projectPath": "C:\\Users\\HP\\source\\repos\\Customers_Portal\\Customers_Portal\\Customers_Portal.csproj",
+      "projectPath": "C:\\Users\\HP\\Desktop\\Amine\\customer_Portal\\Customers_Portal\\Customers_Portal.csproj",
       "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\HP\\source\\repos\\Customers_Portal\\Customers_Portal\\obj\\",
+      "outputPath": "C:\\Users\\HP\\Desktop\\Amine\\customer_Portal\\Customers_Portal\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

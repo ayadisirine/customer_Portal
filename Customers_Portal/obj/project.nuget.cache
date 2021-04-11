@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "mRASTIerWBlf7/n6/SrytkKECbeazlWoN3heQp9jNWlsI+XvVsTfIY74rvSiCuUIlp0VtscTH/xkO/bACqJyqA==",
+  "dgSpecHash": "fiQO4y7wX7yimH5CiEN7KzCe8z3hDe/WVxvupn+eZ1TNHd2+TCp2dWuM4NABKanJ52ubwzwzOzQ+rCyO0SL6Ww==",
   "success": true,
-  "projectFilePath": "C:\\Users\\HP\\source\\repos\\Customers_Portal\\Customers_Portal\\Customers_Portal.csproj",
+  "projectFilePath": "C:\\Users\\HP\\Desktop\\Amine\\customer_Portal\\Customers_Portal\\Customers_Portal.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\HP\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\HP\\.nuget\\packages\\microsoft.aspnet.webapi.client\\5.2.7\\microsoft.aspnet.webapi.client.5.2.7.nupkg.sha512",
