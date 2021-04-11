@@ -1,4 +1,5 @@
 ﻿using Customers_Portal.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -12,6 +13,7 @@ using System.Threading.Tasks;
 
 namespace Customers_Portal.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
@@ -23,7 +25,7 @@ namespace Customers_Portal.Controllers
         {
             _logger = logger;
         }
-
+        [Authorize]
         public async Task<IActionResult> Index(string id)
         {
             if (id == null)
@@ -41,9 +43,10 @@ namespace Customers_Portal.Controllers
 
             return View();
         }
-
+        [Authorize]
         public async Task<IActionResult> Products(long id)
         {
+            ViewData["id"] = id;
             var httpClient = new HttpClient();
             httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             var responseGet = await httpClient.GetAsync(requestUri: $"https://sirinerocketelevatorsrestapi.azurewebsites.net/api/Buildings/customer/{id}");
@@ -124,9 +127,10 @@ namespace Customers_Portal.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
 
-
+        [Authorize]
         public async Task<IActionResult> Intervention(long id)
         {
+            ViewData["id"] = id;
             var httpClient = new HttpClient();
             httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             var responseGet = await httpClient.GetAsync(requestUri: $"https://sirinerocketelevatorsrestapi.azurewebsites.net/api/Customers/id/{id}");

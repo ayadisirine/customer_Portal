@@ -27,17 +27,21 @@
         };
 
         $.ajax({
-            url: 'http://sirinerocketelevatorsrestapi.azurewebsites.net/api/interventions',
+            url: 'https://localhost:5001/api/interventions',
             type: 'POST',
+            dataType: 'jsonp',
+            cors: true,
             data: JSON.stringify(data),
+            secure: true,
             headers: {
-                "Access-Control-Allow-Origin": "*",
-                "Access-Control-Allow-Methods": "HEAD, GET, POST, PUT, PATCH, DELETE",
-                "Access-Control-Allow-Headers": "Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With",
+                'Access-Control-Allow-Origin': '*',
+                
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
+                
             },
             success: function (result) {
+                console.log("success create intervention");
                 alert('Intervention created successfully!');
                 $('.pointer').prop('selected', function () {
                     this.value = "";
