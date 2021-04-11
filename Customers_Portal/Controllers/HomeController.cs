@@ -185,9 +185,28 @@ namespace Customers_Portal.Controllers
             ViewBag.BuildingTable += $"<table > <br/> <br/>";
             return View();
 
+        }
 
 
+        public async Task<String> postIntervention(HttpContent data)
+        {
 
+            var httpClient = new HttpClient();
+
+
+            var response = string.Empty;
+            using (var client = new HttpClient())
+            {
+                HttpResponseMessage result = await client.PostAsync(requestUri: $"https://sirinerocketelevatorsrestapi.azurewebsites.net/api/interventions", data);
+
+
+                if (result.IsSuccessStatusCode)
+            {
+                response = result.StatusCode.ToString();
+                    return (await result.Content.ReadAsAsync<string>());
+                }
+        }
+            return "NOK";
 
         }
     }

@@ -27,18 +27,14 @@
         };
 
         $.ajax({
-            url: 'https://localhost:5001/api/interventions',
+            url: '/Home/postIntervention',
             type: 'POST',
-            dataType: 'jsonp',
-            cors: true,
+            
             data: JSON.stringify(data),
             secure: true,
             headers: {
-                'Access-Control-Allow-Origin': '*',
-                
-                'Accept': 'application/json',
                 'Content-Type': 'application/json'
-                
+               
             },
             success: function (result) {
                 console.log("success create intervention");
